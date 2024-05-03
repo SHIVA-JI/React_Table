@@ -41,8 +41,8 @@
     padding-right: 10px ;
 }
 .list-item{
-    font-weight: 500;
-    font-size: large;
+    font-weight: 700;
+    font-size: medium;
     padding: 10px 0px 10px 5px;
     margin: 0px 10px 10px 10px;
     text-decoration: none;
@@ -62,5 +62,12 @@
         flex-direction: row;
         justify-content:flex-start;
         margin:20px 0px 0px 10px ;
+    }
+}
+
+@media (max-width:1050px){
+    .list-item{
+        font-weight: 400;
+        font-size: medium;
     }
 }

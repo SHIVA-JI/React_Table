@@ -11,7 +11,7 @@ function Table() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchColumn, setSearchColumn] = useState("");
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
-  const [selectAll, setSelectAll] = useState(false);
+  // const [selectAll, setSelectAll] = useState(false);
 
   const itemsperpage = 10;
   const filteredData = data.filter((item) => {
@@ -68,20 +68,18 @@ function Table() {
   
   
   
-  function handleSearch() {
-    const filteredData = data.filter((item) => {
-      if (searchColumn) {
-        return item[searchColumn].toString().toLowerCase().includes(searchTerm.toLowerCase());
-      } else {
-        return Object.values(item).some((value) =>
-          value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-        );
-      }
-    });
-
-    const totalpages = Math.ceil(filteredData.length / itemsperpage);
-    setCurrentPage(1);
-  }
+  // function handleSearch() {
+  //   const filteredData = data.filter((item) => {
+  //     if (searchColumn) {
+  //       return item[searchColumn].toString().toLowerCase().includes(searchTerm.toLowerCase());
+  //     } else {
+  //       return Object.values(item).some((value) =>
+  //         value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+  //       );
+  //     }
+  //   });
+  //   setCurrentPage(1);
+  // }
 
   
 
@@ -102,7 +100,7 @@ function Table() {
             className="search-input"
             onChange={(e) => setSearchTerm(e.target.value)} 
           />
-          <button className="header-button" onClick={()=>handleSearch()}>
+          <button className="header-button" >
             Search
           </button>
         </div>
@@ -150,29 +148,21 @@ function Table() {
       
       <section className="table__foot">
         <div className="pagination-bar">
-          <span className="bar"></span>
           Showing {firstindex + 1} to {lastindex} of {data.length} entries
         </div>
         <nav>
           <ul className="pagination">
-            <li className="page-item">
-              <a href="#" className="page-link" onClick={prePage}>
+            <li className="page-item" onClick={() =>prePage()}>
                 &lt;
-              </a>
             </li>
             {numbers.map((n, i) =>
               i < 2 || i === numbers.length - 1 ? (
                 <li
                   className={`page-item ${currentPage === n ? "active" : ""}`}
                   key={i}
+                  onClick={() => changeCurrentPage(n)}
                 >
-                  <a
-                    href="#"
-                    className="page-link"
-                    onClick={() => changeCurrentPage(n)}
-                  >
-                    {n}
-                  </a>
+                  {n}
                 </li>
               ) : i === 2 ? (
                 <li className="page-item" key={i}>
@@ -180,15 +170,16 @@ function Table() {
                 </li>
               ) : null
             )}
-            <li className="page-item">
-              <a href="#" className="page-link" onClick={nextPage}>
+            <li className="page-item" onClick={nextPage}>
                 {" "}
                 &gt;{" "}
-              </a>
             </li>
           </ul>
         </nav>
       </section>
+
+      {/* <div className="bar"></div> */}
+
     </main>
     // </div>
   );

@@ -43,7 +43,9 @@ const SideNav = () => {
                 {items.map((item, index) => (
                     <li key={index} className='list-item'>
                         <NavLink to={item.path} className='list-item' onClick={() => handleTitleChange(item.name)}>
-                            <FontAwesomeIcon icon={item.ic} className='Side-Icon'/>{item.name}
+                            <FontAwesomeIcon icon={item.ic} className='Side-Icon'/>
+                            {/* {item.name} */}
+                            <span className="item-name">{item.name}</span>
                         </NavLink>
                     </li>
                 ))}

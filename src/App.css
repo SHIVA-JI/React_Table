@@ -39,7 +39,7 @@ body::-webkit-scrollbar-thumb{
 
 
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .SideNav{
     display: none;
   }
@@ -52,9 +52,7 @@ body::-webkit-scrollbar-thumb{
   }
 }
 
-@media (max-width:600px){
-  
-}
+
 
 
 /* .App {
