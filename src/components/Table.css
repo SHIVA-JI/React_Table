@@ -55,7 +55,7 @@ main.table{
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   margin-left: 0.5rem;
-  text-indent: 0.5rem;
+  /* text-indent: 0.5rem; */
 }
 
 
@@ -112,11 +112,13 @@ tbody tr:hover{
 }
 
 
-/** Responsive end**/
+
 .table__foot {
   display: flex;
   justify-content: space-around; 
-  height: 5vh;
+  height: auto;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
   
 }
 
@@ -166,12 +168,12 @@ tbody tr:hover{
   color: #333;
 }
 
-.page-link:hover {
+.page-item:hover {
   background-color: rgb(76, 68, 181); 
   color: white;
 }
 
-.page-item.active .page-link {
+.page-item.active {
   background-color: rgb(76, 68, 181); 
   color: #fff; 
 }
@@ -208,7 +210,7 @@ tbody tr:hover{
 
 
 
-.header-button {
+.header-button ,.search{
   background-color: rgb(76, 69, 181);
   color: white;
   border: none;
@@ -266,8 +268,15 @@ select option {
 
 
 @media (max-width: 744px) {
+  .search-div{
+    display: flex;
+  }
 
+  .button-div{
+    display: flex;
+  }
   .search-input {
+    width: 25%;
     padding: .5rem 0VW .5rem 0VW;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
@@ -275,22 +284,33 @@ select option {
     text-indent: 0.5rem;
   }
 
+  .search{
+    padding: .5rem .5VW .5rem .5VW;
+    margin-left: .3rem;
+  }
+  select{
+    width: 30%;
+  }
+
   .header-button {
     background-color: rgb(76, 69, 181);
     color: white;
     border: none;
-    padding: .5rem .5VW .5rem .5VW;
+    /* padding: .5rem .5VW .5rem .5VW; */
+    padding: .5% .5% .5% .5%;
     border-radius: 0.25rem;
     cursor: pointer;
     margin: 0.2rem 0.5rem 0.2rem 0.5rem;
   }
 
-  .table-head{
+  .table-header{
     justify-content: space-around;
   }
 
   .table__foot {
     justify-content: space-between;
+    margin-top: 0px;
+    margin-bottom: 130px;
     /* justify-content: center;  */
   }
   
@@ -301,11 +321,27 @@ select option {
   .header-button{
     margin: 0.2rem 0.2rem 0.2rem 0.2rem;
   }
+
+  input[type='checkbox']{
+    height: 12px;
+    width: 12px;
+  }
+  table, th, td{
+    padding: .5rem;
+  }
+
+  th,tr{
+    font-size: small;
+  }
 }
 
 @media (max-width:400px){
   .pagination-bar{
-    display: none;
+    margin-right: 5px;
+  }
+
+  .table__body{
+    max-height: calc(65% - 1.6rem);
   }
 }
 

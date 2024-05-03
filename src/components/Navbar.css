@@ -22,7 +22,7 @@
     justify-content:space-between;
     align-items: center;
     letter-spacing: 2px;
-    cursor:pointer;
+    /* cursor:pointer; */
     /* box-sizing: border-box; */
 }
 
@@ -78,37 +78,45 @@
 }
 
 
-@media (max-width:600px) {
-    .Nav{
-        height: 60px;
+@media (max-width:744px) {
+    .page-heading{
+        font-size: small;
+        margin-left: 80PX;
     }
-    .App-logo{
-        /* height: 5vmin; */
-        width: 40px;
-    }
+    
 }
 
 @media (max-width:1050px){
     .Grip-Line{
         display:block;
-        margin-left: 10px;
+        margin-left: 8px;
+        color: white;
     }
 
-    .page-heading{
-        margin-left: 60px;
-    }
+    
 }
 
 @media (max-width:600px) {
     .page-heading{
-        margin-left: 60px;
+        margin-left: 40px;
     }
 
-    .logo-text{
+    /* .logo-text{
         display: none;
     }
 
     .App-logo{
         display: none;
+    } */
+
+    .Nav{
+        height: 70px;
     }
+    .App-logo{
+        /* height: 5vmin; */
+        width: 40px;
+    }
+
+    .logo-ver{display: none;}
+    .logo-sol{display: none;}
 }

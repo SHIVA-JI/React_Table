@@ -32,7 +32,7 @@ const SideNav = () => {
     return (
         <BrowserRouter>
             <div className='mobile-div'>
-                <img src='Verbiz-logo.png' className='App-logo-mobile'/>
+                {/* <img alt='LOGO' src='Verbiz-logo.png' className='App-logo-mobile'/> */}
                 <div className='logo-text-mobile'>
                     <h2 className='logo-ver-mobile'>VERBiZ</h2>
                     <h5 className='logo-sol-mobile'>SOLUTIONS</h5>

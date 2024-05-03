@@ -70,4 +70,17 @@
         font-weight: 400;
         font-size: medium;
     }
+
+    .list-item{
+        font-weight: 700;
+        font-size: medium;
+    }
 }
+
+@media (max-width:744px){
+    .list-item{
+        font-weight: 500;
+        font-size: small;
+    }
+}
+

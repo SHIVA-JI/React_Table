@@ -90,8 +90,8 @@ function Table() {
         <div className="search-div">
           <select value={searchColumn} onChange={(e) => setSearchColumn(e.target.value)}>
             <option value="">Select</option>
-            <option value="org_id">Organisation ID</option>
-            <option value="org_name">Organisation Name</option>
+            <option value="org_id">ID</option>
+            <option value="org_name">Name</option>
             {/* Add other options as needed */}
           </select>
           <input
@@ -100,7 +100,7 @@ function Table() {
             className="search-input"
             onChange={(e) => setSearchTerm(e.target.value)} 
           />
-          <button className="header-button" >
+          <button className=" search" >
             Search
           </button>
         </div>
@@ -162,11 +162,11 @@ function Table() {
                   key={i}
                   onClick={() => changeCurrentPage(n)}
                 >
-                  {n}
+                  {i+1}
                 </li>
               ) : i === 2 ? (
-                <li className="page-item" key={i}>
-                  <span className="page-link">&hellip;</span>
+                <li  key={i}>
+                  <span>&nbsp; &hellip; &nbsp;</span>
                 </li>
               ) : null
             )}
